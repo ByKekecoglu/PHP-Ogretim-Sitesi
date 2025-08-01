@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konu Anlatımı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .dropdown select {
+            padding: 5px;
+            font-size: 16px;
+        }
+      
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            .content {
+                padding: 15px;
+            }
+            header, footer {
+                padding: 15px 0;
+            }
+            .dropdown {
+                right: 10px;
+                top: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .dropdown select {
+                font-size: 14px;
+            }
+        }
+    
+        .code-container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #ccc;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word; 
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="color: #dde3ea;">PHP</h1>
+            
+        </div>
+    </header>
+<div style="text-align: center;"> </div>
+    <div class="container">
+        <div class="content">
+            <h2>PHP Nedir?</h2>
+            <p>PHP (açılımı PHP: Hypertext Preprocessor) geniş bir kitle tarafından kullanılan, özellikle sanal yöreler üzerinde geliştirme için tasarlanmış HTML içine gömülebilen bir betik dilidir.</p>
+           <h2>Php If ve Switch Karar Yapılarının Kullanımı</h2>
+            <p>Karar yapıları her programlama dilinde olmazsa olmazlardan bir tanesidir. Karar yapıları programın akışını belirtilen koşula göre belirlememizi sağlar. Php dilindeki karar yapıları if ve switch karar yapıları olmak üzere iki tanedir. Php ve diğer dillerde en sık kullanılan karar yapısı if karar yapısıdır. Karar yapıları operatörler ile birlikte kullanılmaktır. Eğer operatörler hakkında bir fikriniz yoksa Php Operatörler ve Kullanım Şekilleri konusunu inceleyebilirsiniz.</p>
+        <h2>Php If (Eğer)</h2>
+
+        <p>Php programlamada if karar yapısı en sık kullanılan bir yapıdır. Aslında her dilde en sık kullanılan karar yapısı if karar yapısıdır. Diğer diller de ve php dilinde if karar yapısının çalışma mantığı aynıdır. Koşul ya da koşullar sağlanıyorsa if karar yapısının kapsadığı kodlar çalışır. Aşağıdaki örnekte kod yapısını inceleyelim.</p>
+        
+        <div class="code-container">
+           
+            <pre>
+    <code>
+    &lt;?php 
+    $sayi = 5;
+    if($sayi == 5){
+        echo 'Sayı değişkeninin değeri 5\'tir';
+    }
+    ?&gt;
+    </code>
+            </pre>
+        </div>
+        <p>Yukarıdaki örnekte koşul sağlandığı için if bloğu içerisindeki kodlar çalışacaktır. Eğer koşul sağlanmasaydı if bloğunun sonuna atlanacaktır. Birden fazla koşulda nasıl kullanılacağını aşağıdaki örnekte inceleyelim.</p>
+        <div class="code-container">
+           
+            <pre>
+    <code>
+    &lt;?php 
+    $sayi = 7; 
+    if($sayi &gt; 3 &amp;&amp; $sayi &lt; 10){
+        echo 'Sayi değişkeni 3&apos;ten büyük 10&apos;dan küçüktür.';
+    }
+    ?&gt;
+    </code>
+            </pre>
+        </div>
+    <p>Yukarıdaki örnekte if bloğundaki kodların çalışması için her iki koşulunda sağlanması gerekmektedir. Ve operatörü ile kullandığımız için sayı değişkeni hem 3’ten büyük olmak zorunda hem de 10’dan küçük olmak zorunda böylece koşul sağlanacak ve if bloğu arasındaki kodlar çalışacaktır.</p>
+<p>Php Operatörler ve Kullanım Şekilleri konusunda && (ampersand) işaretinin ve kelime anlamında kullanıldığını göstermiştim. Programlama dillerinde iki tane yan yana ampersand(&&) işareti ve anlamına gelmektedir. Veya kelime anlamında ise yan yana iki tane düz çizgi(||) kullanılmaktadır. Veya operatörü ile kullanımı aşağıda inceleyelim</p>    
+
+
+<div class="code-container">
+
+    <pre>
+<code>
+&lt;?php 
+$sayi = 5;
+if($sayi &lt; 3 || $sayi == 5){
+echo 'Koşul sağlandı';
+}
+?&gt;
+</code>
+    </pre>
+</div>
+<p>Yukarıdaki örnekte veya(||) operatörünü kullandığımız için iki koşuldan sadece bir tanesinin sağlanması if bloğunun çalışması için yeterli olacaktır. Bu durumda sayı değişkeni 3’den küçük değildir fakat 5’e eşit olduğu için koşul sağlanır ve if bloğundaki kodlar çalışır.</p>
+<h2>Php Else If (Eğer Değilse)</h2>
+
+<p>Bazı durumlarda program akışı sırasında değişken değeri değişebilir ve birden fazla farklı değere sahip olabilir. Bu durumda yeni koşullar ile değişken değerini kontrol ederek program akışını yönetebiliriz. Örneğin değişkenin değeri a iken bir işlem b iken farklı bir işlem yapmak isteyebilirsiniz. Bu durumda if koşuluna yeni koşullar eklemek için else if komutu komutu kullanılır. Aşağıdaki örnekte kullanımı inceleyelim.
+
+</p>
+
+<div class="code-container">
+ 
+    <pre>
+<code>
+&lt;?php 
+$sayi = 6;
+if($sayi == 5){
+echo 'Sayı değişkeni 5&apos;tir';
+}else if ($sayi &gt; 2){
+echo 'Sayı değişkeni 2&apos;den büyüktür.';
+}else if($sayi == 8){
+echo 'Sayı değişkeni 8&apos;e eşittir.';
+}
+?&gt;
+</code>
+    </pre>
+</div>
+
+<p>Yukarıdaki örnekte sayı değişkeni üç farklı koşul ile kontrol edilmiştir. Koşulların açıklaması aşağıdaki listeden inceleyelim.</p>
+
+<li>İlk koşulda sayı değişkeninin 5’e eşit olup olmadığı kontrol edilmiştir ve koşul sağlanmadığı için ikinci koşula geçilmiştir.</li>
+<li>İkinci koşulda sayı değişkeni 2’den büyük olduğu için koşul sağlanmıştır ve ikinci else if bloğu aralığındaki kodlar çalıştırılmıştır.</li>
+<li>İkinci koşul sağlandığı için üçüncü koşula bakılmadan program karar yapısının dışından kaldığı yerden devam edecektir.</li>
+
+<p>Burada dikkat edilmesi gereken konu koşulların sıra ile kontrol edilmesidir. Eğer bir koşul sağlanırsa diğer koşullara bakılmaksınız program akışı kaldığı yerden devam eder. Ayrıca ilk önce if komutu sunmanız gerekir, else if komutu tek kullanılamaz.</p>
+<h2>Php Else (Hiçbiri Değilse)</h2>
+<p>Tüm koşulların kontrolünden sonra hiçbir koşul sağlanmıyor else bloğu içerisindeki kodlar çalışacaktır. Eğer tüm koşullar sağlanmadığında bir işlem yaptırmak istiyorsanız else bloğu devreye girecek ve yardımınıza yetişecektir. Kullanımı aşağıdaki örnekte inceleyelim.</p>
+
+<div class="code-container">
+  
+    <pre>
+<code>
+&lt;?php 
+$sayi = 10;
+if($sayi == 5){
+echo 'Değer 5&apos;tir.';
+}else{
+echo 'Değer 5 değildir.';
+}
+?&gt;
+</code>
+    </pre>
+</div>
+<p>Yukarıdaki örnekte koşul sağlanmadı için else bloğu arasındaki kod çalışacaktır. Else bloğu hiçbir koşulun sağlanmadığı durumda devreye girmektedir. Aşağıdaki örnekte birden fazla koşul ile inceleyelim.</p>
+
+<div class="code-container">
+   
+    <pre>
+<code>
+&lt;?php 
+$sayi = 10;
+if($sayi == 4){
+echo 'Sayı değeri 4&apos;tür.';
+}else if ($sayi &lt; 5){
+echo 'Sayı değeri 5&apos;ten küçüktür.';
+}else if ($sayi &gt; 15){
+echo 'Sayı değeri 15&apos;ten büyüktür.';
+}else{
+echo 'Koşullar sağlanmadı.';
+}
+?&gt;
+</code>
+    </pre>
+</div>
+<p>Yukarıdaki örnekte üç farklı koşul verilmiştir. Üç koşulun hiç biri sağlanmadığı için else bloğu çalışacaktır. Genel kullanımı bu şekildedir. Bir yada daha fazla koşul gerçekleşmediğinde yaptırmak istediklerimizi else bloğu arasına yazarız.</p>
+<h2>Php Kısa If Kullanımı</h2>
+<p>Kısa if kullanımı da oldukça sık kullanılan özel bir yapıdır. Kısa kullanımından dolayı zaman kazandırır. Sadece koşulun sağlanması ve sağlanmaması şartı ile çalışır. Aşağıdaki örnekte yapıyı inceleyelim.</p>
+
+<div class="code-container">
+   
+    <pre>
+        <code>
+&lt;?php
+$sayi = 5; 
+echo $sayi == 5 ? 'Sayı 5&apos;e eşittir' : 'Sayı 5 değildir.';
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Yukarıdaki örneği incelediğimizde kısa if kullanımının sadece if ve else durumlarını kontrol ettiğiniz rahatlıkla görebiliyoruz. Bu kullanımı değişkene değer yüklemek için kullanmakta mümkündür.</p>
+
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php 
+$sayi = 2;
+$a = $sayi == 2 ? 'Sayı 2' : ' Sayı 2 değil';
+echo $a;
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Yukarıdaki örnekte bir öncekinden farklı olarak sayı değişkenin durumunu kontrol edip a değişkenine değer atadık ve daha sonra ekrana yazdırdık. Genel kullanım bu şekilde. Normal if kullanımından bir farkı yok farklı operatörler ile farklı koşullar oluşturmak mümkün.
+</p>
+ <h2>Switch</h2>
+<p>Switch yapısı, if yapısına göre biraz daha farklıdır. Operatörler ile koşul belirtmemize izin vermez. Direk değişkenin değerine göre işlem yapmamıza olanak sağlar.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php 
+$a = 6;
+switch($a){
+    case 1:
+        echo 'Değişken değeri 1';
+        break;
+    case 2:
+        echo 'Değişken değer 2';
+        break;
+    default:
+        echo 'Değişken değer 1 yada 2 değildir';
+        break;
+}
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Yukarıda basit bir örnek ile a değişkenin değerini herhangi bir koşul operatörü kullanmadan kontrol ettik. Switch yapısında koşullar case komutu ile art arda yazılmaktadır. Her case bir koşul demektir. Bir case koşulunun sınırı break komutu ile belirlenir. Default komutu ise burada else komutuna denk gelmektedir. Hiçbir koşul sağlanmadığında default bloğu çalışır ve break komutu ile sonlandırılır.</p>
+<p>Eğer case koşulunu break komutu ile sonlandırmazsak koşulun sağlandığı satırdan sonraki tüm satırlarda çalıştırılacak ve çalışmasını istediğimiz kodlarında çalışmasına neden olacağı için program akışını istediğimiz gibi yönlendirememiş olacağız. Her case bloğunu break ile sonlandırmayı unutmayın.</p>
+<p>Son olarak switch yapısında farklı durumlarda aynı işlemi yaptırmak içinde bir kullanım şekli vardır. Aşağıdaki örnekten inceleyelim.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php 
+$a = 5;
+switch($a){
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        echo 'Sayı 5 değil';
+        break;
+    case 5: 
+        echo 'Sayı 5';
+        break;
+}
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Switch yapısında değişken farklı değerlere sahipken aynı işlemi yaptırmak için kullanılan yapılan işlem yukarıdaki örnekteki gibidir. Burada mantığı anladıktan sonra kendi projelerinizde sayfa yönlendirme işlemi için kullanabilirsiniz.</p>
+<h2>PHP döngüler</h2>
+<p>PHP'de döngüler içinde yer alan işlem satırlarının belirli bir koşula bağlı olarak istenen sayıda tekrar edilerek çalıştırılmasını sağlayan yapılardır.</p>
+<li>while döngüsü</li>
+<li>do while döngüsü</li>
+<li>foreach döngüsü</li>
+<li>break deyimi</li>
+<li>continue deyimi</li>
+<h2>while döngüsü</h2>
+<p>while döngüsü ile ilgili koşul ifadesi doğru (TRUE) sonuç verdiği sürece, döngü içinde yer alan işlem satırları çalışmaya devam eder. Eğer döngü ifadesi başlangıçta doğru sonuç vermezse döngü hiç çalışmaz. Döngü ifadesinin değeri her tekrarın başlangıcında kontrol edilir. İfade değeri, döngü içinde yer alan işlem satırları yoluyla yanlış olacak şekilde değiştirilse bile döngü içinde bulunduğu tekrarı bitirene kadar devam eder. while döngüsünün { } parentezleri ve : (Alternatif yazım) yöntemi ile kullanım şekli aşağıda gösterilmektedir:</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php 
+while ($ifade) {
+    // İşlem satırı
+    // .
+    // .
+    // İşlem satırı	  
+}
+?&gt;
+        </code>
+    </pre>
+</div>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = 1;
+while ($deg01 <= 10) {
+    echo $deg01++ . " ";    
+}
+
+echo "&lt;br/&gt;";
+   
+$deg01 = 1;   
+while ($deg01 <= 10):
+    echo $deg01++ . " ";    
+endwhile;   
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+
+<p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 4 5 6 7 8 9 10 <br>
+1 2 3 4 5 6 7 8 9 10</p>
+<p>Yukarıdaki PHP dosyasında, while döngüsü iki farklı yazım yöntemiyle kullanılarak 1'den 10'a kadar olan sayılar 2 kez ekrana yazılır.</p>
+</div>
+<p>PHP'de döngüleri içiçe kullanabiliriz. Bu yöntemle içte yer alan döngüyü dışta yer alan döngüde tanımlanan ifadeye göre istediğimiz sayıda tekrar çalıştırabiliriz.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = 0;
+   
+while ($deg01++ &lt; 3) {
+    $deg02 = 1;  
+
+    while ($deg02 &lt;= 10) {
+        echo $deg02++ . " ";
+    }
+    echo "&lt;br/&gt;";
+}   
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 4 5 6 7 8 9 10 <br>1 2 3 4 5 6 7 8 9 10 <br>1 2 3 4 5 6 7 8 9 10</p>
+<p>Yukarıdaki PHP dosyasında, içiçe 2 while döngüsü ile 1'den 10'a kadar olan sayılar 3 kez ekrana yazılır. İlk while döngüsünün ifadesi içinde yer alan değişken değerinin aynı satırda artırıldığına dikkat ediniz.</p>
+</div>
+<h2>do while döngüsü</h2>
+<p>PHP'de do while döngüsü koşul ifadesinin doğruluğu, while döngüsünden farklı olarak, döngünün sonunda kontrol edilir. Bu nedenle, döngü içinde yer alan işlem satırları en az bir defa çalıştırılır. İlk tekrarın sonunda, ifade kontrolu yapılır ve doğru sonuç verdiği sürece döngü çalışmasına devam eder. do while döngüsünün yapısı aşağıda gösterilmektedir:</p>
+<div class="code-container">
+    <pre>
+        <code>
+do {
+    // İşlem satırı
+    // .
+    // .
+    // İşlem satırı	  
+} while ($ifade);
+        </code>
+    </pre>
+</div>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = 1;
+do {
+    echo $deg01++ . " ";  
+} while ($deg01 &lt;= 10);   
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+<p>
+    Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
+<p>Yukarıdaki PHP dosyasında, do while döngüsü kullanılarak 1'den 10'a kadar olan sayılar ekrana yazılır.</p>
+</div>
+<h2>for döngüsü</h2>
+<p>PHP'de for döngüsünün { } parentezleri ve : (Alternatif yazım) yöntemi ile kullanım şekli aşağıda gösterilmektedir:</p>
+<div class="code-container">
+    <pre>
+        <code>
+for ($ifade1; $ifade2; $ifade3) {
+    // İşlem satırı
+    // .
+    // .
+    // İşlem satırı	  
+}
+        </code>
+    </pre>
+    <li>Yukarıdaki yapıda gösterilen ifade1 ifadesi bir defaya mahsus olmak üzere ve sadece döngünün başlangıcında çalıştırılır. Bu ifade ilk değer atama amacıyla kullanılır.</li>
+<li>ifade2 ifadesi her döngü tekrarının başlangıcında değerlendirilir. Eğer doğru (TRUE) sonuç verirse döngü devam eder ve döngü içinde yer alan işlem satırları çalıştırılır. Eğer yanlış (FALSE) sonuç verirse döngünün çalışması sona erer. Bu ifade döngünün çalışması ile ilgili koşulun tanımlanması için kullanılır.</li>
+<li>ifade3 ifadesi her döngü tekrarının sonunda değerlendirilir. Bu ifade döngü değişken değeri artırma işlemi için kullanılır.</li>
+<li>for döngüsünde tanımlanan ifadelerin her biri boş olabilir veya virgül ile ayrılmış birden fazla ifadeden oluşabilir. ifade2 içindeki virgül ile ayrılmış tüm ifadeler değerlendirilir fakat sonuç en sondaki bölümden alınır. Eğer ifade2 boş olursa döngü sonsuz olarak çalışır.</li>
+</div>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+for ($deg01=1; $deg01&lt;=10; $deg01++) {
+    echo $deg01 . " ";
+}   
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
+<p>Yukarıdaki PHP dosyasında, for döngüsü kullanılarak 1'den 10'a kadar olan sayılar ekrana yazılır. $deg01 değişkenine ilk değer verme ve değer artırma işlemlerinin for döngüsü ifadeler satırında yapıldığına dikkat ediniz.</p>
+</div>
+<h2>foreach döngüsü</h2>
+<p>foreach yapısı diziler üzerinde tekrarlayıcı işlemler yapmak için kullanılır. foreach sadece diziler ve nesneler ile kullanılır. Farklı bir veri türündeki veya ilk değer verilmemiş bir değişkenle kullanıldığında hata meydana gelir. foreach yapısının 2 farklı yazımı aşağıda gösterilmektedir:</p>
+<div class="code-container">
+    <pre>
+        <code>
+foreach ($dizi_ifadesi as $deger) {
+    // İşlem satırı
+    // .
+    // .
+    // İşlem satırı	  
+}
+        </code>
+    </pre>
+</div>
+<p>İlk foreach yapısında sadece dizide yer alan değerlerle ilgili işlemler yapılır. Döngünün her tekrarında sırası gelen dizi elemanının değeri $deger değişkenine atanır ve dizinin dahili göstericisi bir artırılır.</p>
+<p>İkinci foreach yapısında ise, hem değer adları hem de değerlerle ilgili işlemler yapılır. Döngünün her tekrarında sırası gelen dizi elemanının değer adı $deger_adi değişkenine, değeri ise $deger değişkenine atanır ve dizinin dahili göstericisi bir artırılır.</p>
+<p>foreach döngüsü çalışmaya başladığında, dizinin dahili göstergesi otomatik olarak dizinin ilk elemanını gösterecek şekilde ayarlanır. Bu durumda, foreach döngüsünün başında reset() fonksiyonunu kullanmanıza gerek yoktur.</p>
+<p>İşlem yapılan dizi ile referans yoluyla bağlantı yapılmadığı sürece, foreach döngüsü dizinin bir kopyası ile işlem yapar.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = array("a"=&gt;1, "b"=&gt;2, "c"=&gt;3, "d"=&gt;4, "e"=&gt;5);
+	
+foreach (array(1, 2, 3, 4, 5) as $deger) {
+    echo $deger . " ";
+}
+
+echo "&lt;br/&gt;";
+	
+foreach ($deg01 as $deger) {
+    echo $deger . " ";
+}
+	
+echo "&lt;br/&gt;&lt;br/&gt;";
+
+foreach ($deg01 as $deger_adi =&gt; $deger) {
+    echo "Değer adı: $deger_adi Değer: $deger &lt;br/&gt;";
+}	
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 4 5 <br> 1 2 3 4 5</p>
+<p>Değer adı: a Değer: 1 <br>
+    Değer adı: b Değer: 2 <br>
+    Değer adı: c Değer: 3 <br>
+    Değer adı: d Değer: 4 <br>
+    Değer adı: e Değer: 5  <br></p>
+    <p>Yukarıdaki PHP dosyasında, ilk 2 foreach döngüsü aynı işlemi yaparak dizinin değerlerini ekrana yazar. Aralarındaki, tek fark dizi_ifadesi olarak ilkinde dizinin kendisi ikincisinde ise dizinin atandığı bir değişkenin kullanılmasıdır. Üçüncü foreach döngüsünde ise dizide yer alan hem değer adları hem de değerler ekran yazılmaktadır.</p>
+</div>
+<p>foreach döngüsünde kullanılan $deger değişkeninin önüne & işareti getirerek referans yoluyla bağlantı sağlar ve dizi eleman değerlerini değiştirebilirsiniz.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = array(1, 2, 3, 4, 5);
+	
+foreach ($deg01 as &amp;$deger) {
+    $deger += 5;
+}
+	
+unset($deger); 
+	
+foreach ($deg01 as $deger) {
+    echo $deger . " ";
+}	
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>6 7 8 9 10</p>
+<p>Yukarıdaki PHP dosyasında, ilk foreach döngüsünde diziyi referans yoluyla bağlantı sağlandığından dizi elemanlarına yapılan değişiklik kalıcı olur. $deger değişkeni içeriğinin unset() fonksiyonu ile sıfırlandığına dikkat ediniz.</p>
+
+</div>
+
+<h2>break deyimi</h2>
+<p>break deyimi while, do while, for, foreach ve switch yapılarının çalışmasını sonlandırmak için kullanılır. break deyimi ile birlikte isteğe bağlı olarak, break deyiminin içinde bulunduğu yapıda dahil olmak üzere, üste doğru içiçe yer alan kaç adet yapının çalışmasının durdurulacağını belirten bir sayısal ifade kullanılabilir.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = 1;
+while ($deg01 &lt;= 10) {
+    echo $deg01++ . " ";    
+    if ($deg01 == 4) break;
+}
+
+echo "&lt;br/&gt;";
+	
+$deg01 = 1;
+do {
+    echo $deg01++ . " ";
+    if ($deg01 == 6) break;	  
+} while ($deg01 &lt;= 10);
+
+echo "&lt;br/&gt;";
+   
+for ($deg01 = 1; $deg01 &lt;= 10; $deg01++) {
+    echo $deg01 . " ";
+    if ($deg01 == 8) break;
+}	
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 <br>
+    1 2 3 4 5 <br>
+    1 2 3 4 5 6 7 8  </p>
+    <p>Yukarıdaki PHP dosyasında, döngülerin normal çalışmasına göre 1'den 10'a kadar olan sayıların 3 kez ekrana yazılması gerekirken, döngüler içinde yer alan break deyimi, kendisinden önce tanımlanan ifade doğru sonuç verdiğinde, döngülerin çalışmasını beklenenden önce sonlandırmıştır.</p>
+</div>
+<h2>continue deyimi</h2>
+<p>continue deyimi while, do while, for ve foreach döngülerinde bulunduğu işlem satırından sonra yer alan döngü işlem satırlarının çalıştırılmadan bir sonraki döngü tekrarına geçilmesini sağlamak için kullanılır. continue deyimi ile birlikte isteğe bağlı olarak, continue deyiminin içinde bulunduğu yapıda dahil olmak üzere, üste doğru içiçe yer alan kaç adet döngüde atlama işleminin uygulanacağını belirten bir sayısal ifade kullanılabilir.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$deg01 = 0;
+while (++$deg01 &lt;= 10) {
+    if ($deg01 == 4) continue;
+    echo $deg01 . " ";
+}
+
+echo "&lt;br/&gt;";
+	
+$deg01 = 1;
+do {
+    if ($deg01 == 6) continue;	 
+    echo $deg01 . " ";      
+} while (++$deg01 &lt;= 10);
+
+echo "&lt;br/&gt;";
+   
+for ($deg01 = 1; $deg01 &lt;= 10; $deg01++) {
+    if ($deg01 == 8) continue;
+    echo $deg01 . " ";          
+}	
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+    <p>Yukarıdaki dosyayı çalıştırdığımızda, web tarayıcımızda aşağıdaki ifadeler karşımıza çıkar:</p>
+<p>1 2 3 5 6 7 8 9 10 <br>
+    1 2 3 4 5 7 8 9 10 <br>
+    1 2 3 4 5 6 7 9 10  <br></p>
+<p>Yukarıdaki PHP dosyasında, döngülerin normal çalışmasına göre 1'den 10'a kadar olan sayıların 3 kez ekrana yazılması gerekirken, döngüler içinde yer alan continue deyimi, döngülerde sıra ile 4, 6 ve 8 sayılarının ekrana yazılmasını engeller.</p>
+</div>
+<h2>PHP'de Diziler</h2>
+<p>Normal şartlarda bir değişkenin sakladığı tek bir değerdir. Eğer birden fazla değer saklamak isteseydik bunu diziler yardımıyla yapabilirdik.</p>
+<h2>Dizi oluşturmak</h2>
+<p>Dizi oluşturmak</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+$yaslar = array(27, 27, 32);
+$isimler = ["Tayfun", "Mehmet", "Gökhan"];
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Her iki şekilde oluşturduğumuzda da geçerli olacaktır. array() tüm php sürümlerinde çalışırken [] muhtemelen 5 ve öncesinde çalışmayabilir ancak bir önemi yok çünkü bizde php'nin 5. versiyonunu kullanma taraftarı değiliz. Minimum 7. versiyonunu kullanmak performans için daha doğru bir tercih olur.</p>
+<p>Peki oluşturduğumuz $isimler dizisini ekrana basmaya çalışırsak ne olur?</p>
+<p>echo $isimler;</p>
+<p>Burada alacağınız sonuç şöyle olacaktır;</p>
+<p>Array</p>
+<p>Evet gördüğünüz gibi dizi değeri depoladığı için böyle ekrana basamıyoruz. Ne yapacağız_</p>
+<h2>Dizi değerlerini ekrana basmak</h2>
+<p>Her dizi değerinin bir anatarı vardır. Ve unutmayın, dizi anahtarları (index - indis) 0 değerinden başlar. Yani yukarıdaki örneğimizde eğer ben Mehmet değerini ekrana basmak istersem 1. öğeyi ekrana basmam gerekiyor. Bunuda şöyle yapıyoruz;</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;
+echo $isimler[1]; // Çıktı: Mehmet
+&gt;
+        </code>
+    </pre>
+</div>
+<p>Bu mantıkta 0 bana Tayfun değerini, 1 bana Mehmet değerini ve 2 bana Gökhan değerini verecektir.</p>
+<h2>Anahtar-değer dizi oluşturmak</h2>
+<p>Yukarıdaki örneğimizde dizi tanımlarken biz sadece değerleri verdik, elbette böyle yapmak zorunda değiliz. Ayrıca özel olarak anahtarları belirterekte dizi oluşturmamız mümkün. Şöyle ki;</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+$user = [
+    "name" =&gt; "Tayfun",
+    "surname" =&gt; "Erbilen",
+    "age" =&gt; 27,
+    "sizce bunu ekrana nasıl basarım?"
+];
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Gördüğünüz gibi anahtar => değer şeklinde atama yaptım ve her bir anahtar-değer arasında virgül koydum.</p>
+<p>Eğer anahtarı belirlediksek onun değerine bu anahtarları kullanarak ulaşabiliriz. Örneğin adımı ve soyadımı şöyle ekrana basabilirim;</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+echo $user['name'] . ' ' . $user['surname'];
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Peki "sizce bunu ekrana nasıl basarım?" bunu nasıl ekrana basacağım? Yukarıda öğrendiğimiz gibi, eğer anahtar tanımı yoksa 0'dan başlayacağı için şöyle ekrana basabiliriz;</p>
+
+<div class="code-container">
+    <pre>
+        <code>
+            echo $user[0];
+        </code>
+    </pre>
+</div>
+<h2>İç içe dizi oluşturmak</h2>
+<p>Ayrıca sıkça kullanacağımız şey ise, dizi içinde dizi depolamak olacak. Bir örnek vermek gerekirse;</p>
+<div class="code-container">
+    <pre>
+        <code>$user = [
+            "name" => "Tayfun",
+            "surname" => "Erbilen",
+            "age" => 27,
+            "skills" => ["PHP", "CSS", "HTML"],
+            "pets" => [
+                "dogs" => [
+                    [
+                        "name" => "Monti",
+                        "gender" => "Dişi",
+                        "age": 2
+                    ]
+                ],
+                "cats" => [
+                    [
+                        "name" => "Paşa",
+                        "gender" => "Erkek",
+                        "age": 3
+                    ],
+                    [
+                        "name" => "Göbek",
+                        "gender" => "Dişi",
+                        "age" => 1.5,
+                    ],
+                    [
+                        "name" => "Şans",
+                        "gender" => "Dişi",
+                        "age" => 0.7
+                    ]
+                ]
+            ]
+        ];</code>
+    </pre>
+</div>
+<p>Karmaşık mı geldi? Hadi ama, o kadar karmaşık olamaz. Tek yaptığımız anahtar-değer kısmında değer kısmına yine bir dizi tanımlamak oldu. Gelin şimdi Şans ismini ekrana nasıl basarız ona bir bakalım.</p>
+<div class="code-container">
+    <pre>
+        <code>
+            echo $user['pets']['cats'][2]['name'];
+        </code>
+    </pre>
+</div>
+<p>Gördüğünüz gibi önce pets anahtarını seçtim, o da yine bir dizi depoluyor o dizi içinde cats anahtarını seçtim ve onun oluşturduğu dizide anahtar ismi olmadığı için 2. anahtarı yani 3. öğeyi seçerek onun içindeki name anahtarının değerini ekrana bastım. Bu şekilde istediğiniz kadar iç içe dizi oluşturup kullanabilirsiniz.</p>
+<h2>Sabit değişkenlerde dizi tanımı</h2>
+<p>Ayrıca sabit değişkende dizi değeri depolayabilirsiniz. Örneğin;</p>
+<div class="code-container">
+    <pre>
+        <code>
+            define('DIRS', ['.', '..', '/vendor']);
+        </code>
+    </pre>
+</div>
+<p>aynı mantıkta ekrana basabilirsiniz;</p>
+<div class="code-container">
+    <pre>
+        <code>
+            echo DIRS[2]; // Çıktı: /vendor
+        </code>
+    </pre>
+</div>
+<p>Tabi sabit değişken olduğu için başında $ olmadan kullanıyoruz :)</p>
+<h2>Php Fonksiyon Nedir?</h2>
+<p>Php fonksiyonlarını hazır Php fonksiyonları (built-in function) ve kullanıcı tanımlı fonksiyonlar (user-defined functions) olarak ikiye ayırabiliriz.</p>
+<p>Php fonksiyonu tanımlayarak bir kod bloğunu istediğimiz yerde çağırıp çalıştırabiliriz.</p>
+<p>Örneğin dışarıdan gönderilen 2 sayıyı toplayıp geri gönderen bir php fonksiyonu.</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+
+function topla(int $a, int $b) {
+  return $a + $b;
+}
+
+echo topla(10,20);
+
+?&gt;
+        </code>
+    </pre>
+</div>
+<h2>Php Fonksiyon Tanımlama</h2>
+<p>Php fonksiyonlarını function komutuyla tanımlarız.</p>
+<div class="code-container">
+    <pre>
+    <code>function fonksiyon_adi() {
+        // php kodları
+      }</code></pre>
+</div>
+<p>Fonksiyon ismi harf ya da "_" alt tire işaretiyle başlayabilir. Boşluk karakteri içermez.</p>
+<p>Fonksiyon kapsamındaki kodlar { } işaretleri arasına gelir.</p>
+<p>Fonksiyon içerisindeki kodlar fonksiyon çağrıldığında çalıştırılır.</p>
+<p>Örnek:</p><br>
+<div class="code-container">
+    <pre>
+        <code>function selamlama() {
+            for($i=0; $i < 5; $i++ ) {
+                echo "Merhaba PHP"."<br>";
+            }
+        }
+        
+        selamlama() // ekrana 5 kere yazar.
+        selamlama() // ekrana 5 kere yazar.</code>
+    </pre>
+</div>
+<p>selamlama() fonksiyonu ekrana 5 kere "Merhaba PHP" yazar ancak fonksiyonun çağrılması lazım. Fonksiyon 2 kere çağrıldığından dolayı 2 x 5 ekrana 10 kere "Merhaba PHP" yazar.</p>
+<p>Örnek:</p>
+<div class="code-container">
+    <pre>
+        <code>function toplama() {
+            $a = 40;
+            $b = 30;
+            echo $a + $b;
+        }
+        
+        toplama(); // 70</code>
+    </pre>
+</div>
+<p>toplama() fonksiyonu her çağrıldığında tanımlanan $a ve $b değerleri toplanır ekrana 70 yazdırılır. Ancak toplama() fonksiyonunun tek görevi her çağrıldığında ekrana 70 değerini yazması olmamalıdır. Dışarıdan gönderilen sayıları toplayıp yazdırması mantıklı olacaktır.</p>
+<h2>Parametre Alan Php Fonksiyonları</h2>
+<p>Değişen değerlerle çalışan dinamik php fonksiyonları tanımlamak için fonksiyona parametre gönderimi yapabiliriz.</p>
+<p>Fonksiyonlara gönderdiğimiz değerler tanımlanan parametrelere kopyalanır.</p>
+ <p>Örnek:</p>
+ <div class="code-container">
+    <pre>
+        <code>
+            function selamlama($isim) {
+                echo "Merhaba ".$isim."< br >";
+             }
+             
+             echo selamlama("Ahmet");   // Ahmet
+             echo selamlama("Ali");     // Ali
+             echo selamlama("Ayşe");    // Ayşe
+        </code>
+    </pre>
+ </div>
+<p>selamlama() fonksiyonu $isim şeklinde bir parametre bekler. Gönderilen her değer bu parametreye kopyalanır ve ekrana yazdırılır. Bu sayede selamlama() fonksiyonunu defalarca farklı isimler için kullanabiliriz.</p>
+<p>Örnek:</p>
+<div class="code-container">
+    <pre>
+        <code>
+            function toplama($sayi1, $sayi2) {
+                echo $sayi1 + $sayi2;
+           }
+           
+           echo toplama(30, 50);   // 80
+           echo toplama(130, 50);  // 180
+        </code>
+    </pre>
+</div>
+<p>toplama() fonksiyonu 2 adet parametre bekler. Sırasıyla gönderilen değerler $sayi1 ve $sayi2 parametrelerine kopyalanır ve toplanır.</p>
+<h2>Değer Döndüren Php Fonksiyonları - Return</h2>
+<p>Fonksiyon içerisinde hesaplanan bir değeri doğrudan fonksiyon içinde yazdırmak yerine bu değeri fonksiyondan geriye return komutu ile döndürebilirsiniz.</p>
+<p>Örnek:</p>
+<div class="code-container">
+    <pre>
+        <code>function toplama($sayi1, $sayi2) {
+            return $sayi1 + $sayi2;
+       }
+       
+       $sonuc = toplama(20,30);
+       echo $sonuc;  // 50</code>
+    </pre>
+</div>
+<p>Fonksiyon içerisinde hesaplanan değeri yazdırmak yerine değeri return ile geriye döndürüyoruz. Aynen değişkenlere değer atar gibi $sonuc değerine toplama() dan gelen değer atanır ve sonrasında ekrana yazdırırız.</p>
+<h2>Fonksiyon İçinde Fonksiyon Kullanımı</h2>
+<p>Bir fonksiyon oluşturmaktaki amacımız iş yapan bir fonksiyonu sonradan istenildiği kadar kullanmaktır. Dolayısıyla bir fonksiyona genelde sadece bir görev verilir ve her bir görevi yerine getiren fonksiyonlar iç içe de kullanılmalıdır.</p>
+<p>
+    Örnek:
+</p>
+<div class="code-container">
+    <pre><code>function yasHesapla($dogumYili) {
+        return date("Y") - $dogumYili;
+   }
+   
+   echo yasHesapla(1985);
+   echo yasHesapla(2000);
+   
+   function emekliligeKacYilKaldi($dogumYili, $isim) {
+        $yas = yasHesapla($dogumYili);
+   
+        $kalanSure = 65 - $yas;
+   
+        if($kalanSure > 0) {
+           return "$isim, emekliliğe $kalanSure yıl kaldı";
+        } else {
+           return "$isim, zaten $kalanSure yıl önce emekli oldunuz";
+        }
+   }
+   
+   echo emekliligeKacYilKaldi(1950, "Ahmet");
+   echo emekliligeKacYilKaldi(1980, "Ayşe");</code></pre>
+</div>
+<p>yazHesapla() fonksiyonu kendisine gönderilen $dogumYili parametresine göre yaşı hesaplar.</p>
+<p>emekliligeKacYilKaldi() fonksiyonu gönderilen $dogumYili ve $isim bilgisine göre emekliliğe kalan sene bilgisini hesaplar ve ekrana yazdırır. Ancak emekliligeKacYilKaldi() fonksiyonu içerisinde doğum yılına göre sene bilgisini yasHesapla fonksiyonu hesaplar.</p>
+<h2>Fonksiyonlarda Default Parametre </h2>
+<p>Php fonksiyonlarının beklediği parametrelere her zaman bir değer göndermek zorunda değiliz. Ancak fonksiyonların çalışmaya devam etmesi için gönderilmeyen parametreler için varsayılan bir değer ataması yapılıyor olmalıdır.</p>
+<p>Örnek:</p>
+<div class="code-container">
+    <pre>
+        <code>
+            function selamlama($isim="Ziyaretçi", $mesaj="İyi günler") {
+                return "$mesaj $isim";
+             }
+             
+             $sonuc = selamlama("Ahmet","Merhaba");   // Merhaba Ahmet
+             $sonuc = selamlama("Ahmet");             // İyi günler Ahmet
+             $sonuc = selamlama();                    // İyi günler Ziyaretçi  
+             
+        </code>
+    </pre>
+</div>
+<h2>Form Kullanımı</h2>
+<p>PHP'nin en güçlü özelliklerinden biri HTML formlarına yaklaşım biçimidir. Bilinmesi gereken ilk önemli durum, form içindeki tüm elemanların PHP tarafından otomatik olarak kullanılabilir olacağıdır. PHP ile formların kullanımı ve daha ayrıntılı bilgi için Dış kaynaklı değişkenler bölümü okunabilir. Örnek HTML formu:</p>
+<p>Örnek 1 - Örnek HTML formu</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;form action="action.php" method="post"&gt;
+    &lt;label for="name"&gt;İsminiz:&lt;/label&gt;
+    &lt;input name="name" id="name" type="text"&gt;
+
+    &lt;label for="age"&gt;Yaşınız:&lt;/label&gt;
+    &lt;input name="age" id="age" type="number"&gt;
+
+    &lt;button type="submit"&gt;Gönder&lt;/button&gt;
+&lt;/form&gt;
+        </code>
+    </pre>
+</div>
+
+
+<p>Bu formda özel hiçbir şey yoktur. Hiçbir özel etiket içermeyen düz bir HTML formudur. Kullanıcı formu doldurup 'Gönder' tuşuna bastığında, action.php sayfası çağrılır. Bu dosyaya aşağıdakiler yazılabilir:</p>
+<h2>Örnek 2 - Formdan veri yazdırmak</h2>
+
+<div class="code-container">
+    <pre>
+        <code>
+Merhaba &lt;?php echo htmlspecialchars($_POST['name']); ?&gt;.
+Siz &lt;?php echo (int)$_POST['age']; ?&gt; yaşındasınız.
+        </code>
+    </pre>
+</div>
+
+
+<p>Bu betikten elde edilecek örnek çıktı:</p>
+<div class="code-container">
+    <pre>
+        <code>Merhaba Ahmet. Siz 22 yaşındasınız.</code>
+    </pre>
+</div>
+<p>htmlspecialchars() ve (int) kısımları haricinde yapılan iş oldukça açıktır. htmlspecialchars() işlevi HTML'ye özel karakterlerin doğru şekilde kodlandığından emin olunmasını sağlar, dolayısıyla başkaları sayfanıza dışardan HTML etiketleri veya Javascript yerleştiremez. Yaş alanınında ise değerin bir tamsayı olması gerektiği bilindiğinden değerin int türüne dönüştürülmesiyle otomatik olarak bu alana girilmesi olası başı boş karakterlerden de kurtulmuş olunmaktadır. Ayrıca, bunun PHP'de otomatik olarak yapılmasını sağlamak için süzgeç eklentisi de kullanılabilirdi. $_POST['isim'] değişkeni ve $_POST['yaş'] değişkenleri PHP tarafından otomatik olarak oluşturulur. Daha önce $_SERVER süper küresel değişkeni kullanılmıştı, yukarıda ise tüm POST verisini içeren $_POST süper küresel değişkeni tanıtıldı. Formda tanımlı yöntemin POST oluşuna dikkat edilmelidir. GET yöntemi kullanılmış olsaydı, form bilgileri $_GET süper küresel değişkenine atanmış olacaktı. Bunların haricinde, istemciden gelen verinin hangi kaynaktan geldiği önemli değilse $_REQUEST süper küreseli de kullanılabilirdi. Bu değişken GET, POST ve COOKIE verilerinin birleşiminden oluşur.</p>
+<h2>Bağlantılar ve Bağlantı Yönetimi </h2>
+<p>Bağlantılar temel PDO sınıfının örneklenmesiyle kurulur. Hangi sürücünün kullanılacağının bir önemi yoktur; daima PDO sınıf isminin kullanılması gerekir. Veritabanı kaynağı (diğer bir deyişle DSN) ve isteğe bağlı olarak kullanıcı ismi ve parolası belirtmek için kurucu kullanılabilir.</p>
+<p>Örnek 1 - MySQL'e bağlanma</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Bir hata oluşursa bu bir PDOException istisnasına sebep olur. Hatayı ele almak için istisna yakalanabilir veya işlem set_exception_handler() üzerinden ayarlanmış bir küresel hata işleme uygulamasına bırakılabilir.</p>
+<p>Örnek 2 - Bağlantı hatalarının ele alınışı</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+try {
+    $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+} catch (PDOException $e) {
+    // örneğin zaman aşımını bekledikten sonra yeniden bağlanmaya çalış
+}
+?&gt;
+        </code>
+    </pre>
+</div>
+<div style="background-color: rgb(203, 105, 105);"><p><strong>Uyarı</strong>
+    Tıpkı diğer herhangi bir istisna gibi, PDOException da bir catch deyimi aracılığıyla açıkça veya set_exception_handler() aracılığıyla dolaylı olarak yakalanabilir. Aksi takdirde varsayılan olarak, yakalanmamış bir istisnayı E_FATAL_ERROR ölümcül hatasına dönüştürme davranışı gerçekleşir. Ölümcül hata, bağlantı ayrıntılarını sızdırabilecek bir geri izleme içerecektir. Bu nedenle, bir üretim sunucusunda php.ini display_errors seçeneğine 0 atanmalıdır.</p></div>
+
+<p>Veritabanı bağlantısının başarıyla kurulmasıyla betiğinize PDO sınıfının bir örneği döner. PDO nesnesinin ömrü boyunca bağlantı etkin kalır. Bağlantıyı kapatmak için, nesneye gönderimli herşeyin silindiğinden emin olarak nesneyi yok etmek gerekir; nesneyi tutan değişkene null atanarak bu yapılabilir. Bu yapılmazsa, PHP betiği sonlandığında nesne kendiliğinden yok edilir.</p>
+<div><p>Bilginize: Bu PDO örneğine hala başka gönderimler varsa (örneğin bir PDOStatement örneğinden veya aynı PDO örneğine gönderimli diğer değişkenlerden), bunların da kaldırılması gerekir (örneğin, PDOStatement'a başvuran değişkene null atanarak).</p></div>
+<p>Örnek 3 - Bir bağlantının kapatılışı</p>
+
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+// burada bağlantıyı kullanıyoruz
+
+$sth = $dbh->query('SELECT * FROM foo');
+
+// İşimiz bittiğine göre bağlantıyı kapatabiliriz.
+$sth = null;
+$dbh = null;
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>Çoğu HTTP uygulaması veritabanı sunucularına kalıcı bağlantılardan medet umar. Kalıcı bağlantılar betiğin işi bittiğinde kapatılmaz, önbelleğe alınıp aynı kimlik kanıtlarıyla bağlantı kurmak isteyen başka betiklerce kullanılır. Kalıcı bağlantı önbelleği, bir betiğin bir veritabanı ile her iletişime geçme isteğinde yeni bir bağlantı kurma maliyetini ortadan kaldırır ve uygulamanın daha hızlı çalışmasını sağlar.</p>
+
+<p>Örnek 4 - Kalıcı bağlantılar</p>
+<div class="code-container">
+    <pre>
+        <code>
+&lt;?php
+$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass, array(
+    PDO::ATTR_PERSISTENT => true
+));
+?&gt;
+        </code>
+    </pre>
+</div>
+<p>PDO::ATTR_PERSISTENT seçeneğinin değeri, sayısal olmayan bir dizge olmadığı sürece bool'a (kalıcı bağlantıları etkinleştir/devre dışı bırak) dönüştürülür, bu durumda çok sayıda kalıcı bağlantı havuzunun kullanımına izin verilir. Bu, farklı bağlantılar uyumsuz ayarlar kullanıyorsa, örneğin farklı PDO::MYSQL_ATTR_USE_BUFFERED_QUERY değerleri kullanılıyorsa yararlıdır.</p>
+<div><p>Bilginize:
+
+    Kalıcı bağlantı kullanmak için PDO kurucusuna aktarılan sürücü seçenekleri dizisinde PDO::ATTR_PERSISTENT sabitine true atanmalıdır. Nesne ilklendirildikten sonra bu özelliğin PDO::setAttribute() ile etkin kılınması istenirse sürücü kalıcı bağlantıları kullanmayacaktır.</p></div>
+<div><p>Bilginize:
+
+    PDO ODBC sürücüsü kullanılıyorsa ve ODBC kütüphaneleri ODBC Bağlantı Havuzlarını destekliyorsa (hem unixODBC hem de Windows bunu yapar; başkaları da olabilir) kalıcı PDO bağlantılarının kullanılması önerilmez; bağlantı önbelleklemesini ODBC Bağlantı Havuzlama katmanına bırakmak daha iyidir. ODBC Bağlantı Havuzu bağlantıyı süreçteki diğer modüllerle paylaşır; eğer PDO bağlantıyı önbelleklemeye çalışırsa bu bağlantı asla ODBC bağlantı havuzuna dönmez ve sonuçta diğer modüllere hizmet vermek için ek bağlantılar oluşur.</p></div>
+
+
+</div>
+    </div>
+
+    
+
+    <footer>
+        <p>&copy; Yasir Sadi Kekeçoğlu Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
